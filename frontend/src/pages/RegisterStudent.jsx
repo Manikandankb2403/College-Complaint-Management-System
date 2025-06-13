@@ -20,7 +20,7 @@ const RegisterStudent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/register-student', {
+      await axios.post('https://college-complaint-management-system-99w0.onrender.com/api/auth/register-student', {
         ...formData,
         role: 'student',
         position: 'student',
