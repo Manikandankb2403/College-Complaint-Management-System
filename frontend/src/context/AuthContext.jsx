@@ -12,7 +12,7 @@ const AuthProvider = ({ children }) => {
     if (token) {
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       // Fetch user data
-      axios.get('http://localhost:5000/api/auth/me')
+      axios.get('https://college-complaint-management-system-99w0.onrender.com/api/auth/me')
         .then(res => {
           setUser({ ...res.data, token });
           setLoading(false);
@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (identifier, password) => {
-    const res = await axios.post('http://localhost:5000/api/auth/login', { identifier, password });
+    const res = await axios.post('https://college-complaint-management-system-99w0.onrender.com/api/auth/login', { identifier, password });
     localStorage.setItem('token', res.data.token);
     axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`;
     setUser({ ...res.data, token: res.data.token });
