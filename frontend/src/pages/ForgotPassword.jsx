@@ -14,7 +14,7 @@ const ForgotPassword = () => {
     setSuccess('');
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+      const res = await axios.post('https://college-complaint-management-system-99w0.onrender.com/api/auth/forgot-password', { email });
       setSuccess(res.data.message || 'Password reset email sent. Check your inbox.');
       setEmail('');
       setTimeout(() => navigate('/login'), 3000); // Redirect to login after 3s
